@@ -1,0 +1,10 @@
+[project]
+name = "hermes-offline-zim"
+version = "0.1.0"
+description = "Hermes Agent plugin: list, search and read offline ZIM libraries"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    # 4.0 renamed the search API (get_results, SearchResult objects); this plugin uses that API.
+    "libzim>=4.0.0,<5",
+]

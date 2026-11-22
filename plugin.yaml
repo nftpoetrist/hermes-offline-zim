@@ -1,0 +1,25 @@
+name: offline-zim
+version: 0.1.0
+manifest_version: 2
+api_version: 1
+description: List, search and read offline ZIM libraries (Wikipedia, Stack Exchange, Gutenberg and more) on this machine
+author: nftpoetrist
+license: MIT
+homepage: https://github.com/nftpoetrist/hermes-offline-zim
+tags: [zim, kiwix, offline, wikipedia, reference]
+requires_hermes: ">=0.23.3"
+provides_tools:
+  - zim_list_books
+  - zim_search
+  - zim_read
+config_schema:
+  paths:
+    type: list
+    default: []
+    description: >-
+      ZIM files, or folders holding .zim files (scanned one level deep), to offer to the agent.
+      Each file becomes a book whose id is its file name without .zim.
+  max_chars:
+    type: int
+    default: 12000
+    description: Characters of article text zim_read returns per call (1000-100000); longer articles are read in parts.
